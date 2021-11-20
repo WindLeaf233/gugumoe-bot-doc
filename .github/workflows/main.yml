@@ -24,9 +24,14 @@ jobs:
       - name: Build Docs
         run: npm run docs:build
 
+      - name: Auth
+        run: |
+          git config --global user.name "WindLeaf233"
+          git config --global user.email "mc.windleaf@foxmail.com"
+          git remote set-url origin https://$PERSONAL_ACCESS_TOKEN@github.com/WindLeaf233/gugumoe-bot-doc-dist.git
+      
       - name: Push to Repo
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: WindLeaf233/gugumoe-bot-doc-dist
-          directory: docs/.vuepress/dist
+        run: |
+          git add docs/.vuepress/dist/*
+          git commit -m "update"
+          git push -u origin master
