@@ -28,5 +28,5 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          repository: gugumore-bot-doc-dist
+          repository: WindLeaf233/gugumoe-bot-doc-dist
           directory: docs/.vuepress/dist
