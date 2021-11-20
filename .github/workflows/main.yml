@@ -26,9 +26,9 @@ jobs:
 
       - name: Auth
         run: |
-          git config --global user.name "WindLeaf233"
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "mc.windleaf@foxmail.com"
-          git remote set-url origin https://$PERSONAL_ACCESS_TOKEN@github.com/WindLeaf233/gugumoe-bot-doc-dist.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/WindLeaf233/gugumoe-bot-doc-dist.git
       
       - name: Push to Repo
         run: |
